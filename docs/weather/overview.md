@@ -27,12 +27,6 @@ Pick a city anywhere on the planet. If it's raining there, it rains on your serv
 - **Resilient** — retries on failure, keeps last known data, explains errors clearly
 - **No dependencies** — ESX, QBCore, QBox or standalone
 
-## Requirements
-
-- FiveM server artifacts supporting `fx_version 'cerulean'`
-- A free [OpenWeatherMap](https://openweathermap.org/) API key
-- Outbound HTTPS access from your server
-
 ## Performance
 
 | State | Cost |
@@ -42,4 +36,10 @@ Pick a city anywhere on the planet. If it's raining there, it rains on your serv
 
 One API call per interval regardless of player count (~4,300/month at the default 10 minutes — inside the free tier).
 
-Continue: [Installation](installation.md) · [Admin commands](admin-commands.md) · [Changelog](changelog.md)
+## Credits
+
+- **Created by:** Nevera — for Nevera Hard RP Server
+- **Weather data:** [OpenWeatherMap](https://openweathermap.org/)
+- **License:** MIT — see `LICENSE`
+
+Continue: [Dependencies](dependencies.md) · [Installation](installation.md) · [Configuration](configuration.md) · [Exports](exports.md) · [Admin Commands](admin-commands.md) · [Troubleshooting](troubleshooting.md) · [Changelog](changelog.md)

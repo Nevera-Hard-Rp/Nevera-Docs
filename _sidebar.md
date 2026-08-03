@@ -10,8 +10,12 @@
 
 - **Weather (Realtime Weather & Clock)**
   - [Overview](docs/weather/overview.md)
+  - [Dependencies](docs/weather/dependencies.md)
   - [Installation](docs/weather/installation.md)
+  - [Configuration](docs/weather/configuration.md)
+  - [Exports](docs/weather/exports.md)
   - [Admin Commands](docs/weather/admin-commands.md)
+  - [Troubleshooting](docs/weather/troubleshooting.md)
   - [Changelog](docs/weather/changelog.md)
 
 - **Economy**
