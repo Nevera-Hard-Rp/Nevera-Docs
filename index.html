@@ -1,17 +1,115 @@
 <!DOCTYPE html>
-<html lang="hr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Nevera Docs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <meta name="description" content="Dokumentacija za Nevera FiveM skripte">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <meta name="description" content="Documentation for Nevera FiveM resources">
+
+  <link rel="stylesheet" id="nevera-theme-dark" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/dark.css">
+  <link rel="stylesheet" id="nevera-theme-light" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css" disabled>
+
   <style>
-    :root { --theme-color: #6366f1; }
+    :root {
+      --nevera-accent: #f43f5e;
+    }
     body { text-align: left; }
+
+    /* ---------- Theme toggle button ---------- */
+    #nevera-theme-toggle {
+      position: fixed;
+      top: 14px;
+      right: 16px;
+      z-index: 999;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid currentColor;
+      background: transparent;
+      color: inherit;
+      font-size: 16px;
+      cursor: pointer;
+      opacity: 0.75;
+    }
+    #nevera-theme-toggle:hover { opacity: 1; }
+
+    /* ---------- Numbered step blocks (H2 sections) ---------- */
+    .markdown-section { counter-reset: nevera-step; }
+    .markdown-section .step-block {
+      position: relative;
+      margin: 0 0 28px 16px;
+      padding-left: 32px;
+      border-left: 2px solid var(--nevera-accent);
+    }
+    .markdown-section .step-block:last-of-type { border-left-color: transparent; }
+    .markdown-section .step-block h2 {
+      margin-top: 0;
+      position: relative;
+    }
+    .markdown-section .step-block h2::before {
+      counter-increment: nevera-step;
+      content: counter(nevera-step);
+      position: absolute;
+      left: -47px;
+      top: 0;
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
+      text-align: center;
+      border-radius: 50%;
+      background: var(--nevera-accent);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    /* ---------- Right "On this page" TOC ---------- */
+    #nevera-toc {
+      position: fixed;
+      top: 70px;
+      right: 24px;
+      width: 220px;
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
+      font-size: 13px;
+      padding-left: 14px;
+      border-left: 1px solid rgba(128, 128, 128, 0.25);
+    }
+    #nevera-toc .nevera-toc-title {
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      opacity: 0.55;
+      font-size: 11px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    #nevera-toc ul { list-style: none; margin: 0; padding: 0; }
+    #nevera-toc li { margin: 7px 0; }
+    #nevera-toc li.nevera-toc-sub { padding-left: 12px; }
+    #nevera-toc a {
+      text-decoration: none;
+      color: inherit;
+      opacity: 0.6;
+      display: block;
+      line-height: 1.4;
+    }
+    #nevera-toc a:hover { opacity: 0.9; }
+    #nevera-toc a.active {
+      opacity: 1;
+      color: var(--nevera-accent);
+      font-weight: 600;
+    }
+
+    @media (max-width: 1250px) {
+      #nevera-toc { display: none; }
+    }
+    @media (min-width: 1251px) {
+      .content { margin-right: 260px; }
+    }
   </style>
 </head>
 <body>
+  <button id="nevera-theme-toggle" title="Toggle light/dark">🌙</button>
   <div id="app"></div>
   <script>
     window.$docsify = {
@@ -27,11 +125,75 @@
       search: {
         maxAge: 86400000,
         paths: 'auto',
-        placeholder: 'Pretraži...',
-        noData: 'Nema rezultata.',
+        placeholder: 'Search...',
+        noData: 'No results.',
         depth: 4
       },
-      plugins: []
+      plugins: [
+        function (hook) {
+          hook.doneEach(function () {
+            var content = document.querySelector('.markdown-section');
+            if (!content) return;
+
+            // ---- Wrap each H2 + its following siblings into a numbered step-block ----
+            var h2s = Array.prototype.slice.call(content.querySelectorAll('h2'));
+            h2s.forEach(function (h2) {
+              var wrapper = document.createElement('div');
+              wrapper.className = 'step-block';
+              h2.parentNode.insertBefore(wrapper, h2);
+              var node = h2;
+              while (node) {
+                var next = node.nextSibling;
+                wrapper.appendChild(node);
+                if (next && next.nodeType === 1 && next.tagName === 'H2') break;
+                node = next;
+              }
+            });
+
+            // ---- Build the right-hand "On this page" TOC ----
+            var old = document.getElementById('nevera-toc');
+            if (old) old.remove();
+
+            var headings = Array.prototype.slice.call(content.querySelectorAll('h2, h3'));
+            if (headings.length < 2) return;
+
+            var toc = document.createElement('div');
+            toc.id = 'nevera-toc';
+
+            var title = document.createElement('div');
+            title.className = 'nevera-toc-title';
+            title.textContent = 'On this page';
+            toc.appendChild(title);
+
+            var list = document.createElement('ul');
+            headings.forEach(function (h, i) {
+              if (!h.id) h.id = 'nevera-heading-' + i;
+              var li = document.createElement('li');
+              if (h.tagName === 'H3') li.className = 'nevera-toc-sub';
+              var a = document.createElement('a');
+              a.href = '#' + h.id;
+              a.textContent = h.textContent;
+              li.appendChild(a);
+              list.appendChild(li);
+            });
+            toc.appendChild(list);
+            document.body.appendChild(toc);
+
+            var links = toc.querySelectorAll('a');
+            var observer = new IntersectionObserver(function (entries) {
+              entries.forEach(function (entry) {
+                var link = toc.querySelector('a[href="#' + entry.target.id + '"]');
+                if (!link) return;
+                if (entry.isIntersecting) {
+                  for (var i = 0; i < links.length; i++) links[i].classList.remove('active');
+                  link.classList.add('active');
+                }
+              });
+            }, { rootMargin: '0px 0px -70% 0px' });
+            headings.forEach(function (h) { observer.observe(h); });
+          });
+        }
+      ]
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
@@ -40,5 +202,33 @@
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-lua.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-sql.min.js"></script>
+  <script>
+    (function () {
+      var dark = document.getElementById('nevera-theme-dark');
+      var light = document.getElementById('nevera-theme-light');
+      var btn = document.getElementById('nevera-theme-toggle');
+
+      function apply(theme) {
+        if (theme === 'light') {
+          light.disabled = false;
+          dark.disabled = true;
+          btn.textContent = '🌙';
+        } else {
+          dark.disabled = false;
+          light.disabled = true;
+          btn.textContent = '☀️';
+        }
+        localStorage.setItem('nevera-docs-theme', theme);
+      }
+
+      var current = localStorage.getItem('nevera-docs-theme') || 'dark';
+      apply(current);
+
+      btn.addEventListener('click', function () {
+        current = current === 'dark' ? 'light' : 'dark';
+        apply(current);
+      });
+    })();
+  </script>
 </body>
 </html>
