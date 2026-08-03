@@ -1,3 +1,3 @@
-# Economy — Konfiguracija
+# Economy — Configuration
 
-> 🚧 Uskoro.
+> 🚧 Coming soon.

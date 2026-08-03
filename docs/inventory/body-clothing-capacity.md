@@ -1,3 +1,3 @@
-# Body / odjeća — kapacitet
+# Body / Clothing Capacity
 
-> 🚧 Uskoro.
+> 🚧 Coming soon.

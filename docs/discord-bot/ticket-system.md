@@ -1,3 +1,3 @@
-# Discord bot — Ticket sustav
+# Discord Bot — Ticket System
 
-> 🚧 Uskoro.
+> 🚧 Coming soon.

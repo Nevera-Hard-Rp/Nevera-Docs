@@ -1,3 +1,3 @@
-# Discord bot — Lokalizacija
+# Discord Bot — Localization
 
-> 🚧 Uskoro.
+> 🚧 Coming soon.

@@ -1,3 +1,3 @@
-# Konflikti i slotovi
+# Conflicts & Slots
 
-> 🚧 Uskoro.
+> 🚧 Coming soon.

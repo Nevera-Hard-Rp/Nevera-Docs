@@ -1,3 +1,3 @@
 # Tutorial (nevera-tutorial)
 
-> 🚧 Uskoro.
+> 🚧 Coming soon.

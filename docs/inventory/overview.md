@@ -1,3 +1,3 @@
-# Inventory — Pregled
+# Inventory — Overview
 
-> 🚧 Uskoro — dokumentacija za `nevera_inventory` se priprema.
+> 🚧 Coming soon — documentation for `nevera_inventory` is being prepared.

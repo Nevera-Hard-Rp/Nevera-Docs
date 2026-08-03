@@ -1,3 +1,3 @@
-# Integracija — ox_inventory
+# Integration — ox_inventory
 
-> 🚧 Uskoro.
+> 🚧 Coming soon.

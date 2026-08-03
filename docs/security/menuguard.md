@@ -1,3 +1,3 @@
 # Menuguard (nevera_menuguard)
 
-> 🚧 Uskoro. Kratki opis: soft-lock koji sprječava otvaranje više menija istovremeno. Koristi ga i Nevera Court (opcionalno) — vidi [Sudstvo](../sudstvo/overview.md).
+> 🚧 Coming soon. Short description: a soft-lock that prevents multiple menus from being open at once. Also used (optionally) by Nevera Court — see [Court](../sudstvo/overview.md).

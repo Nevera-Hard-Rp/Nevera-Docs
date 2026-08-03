@@ -1,3 +1,3 @@
 # Autopazar (nevera_autopazar)
 
-> 🚧 Uskoro.
+> 🚧 Coming soon.

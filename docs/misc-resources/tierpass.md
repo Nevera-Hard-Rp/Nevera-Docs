@@ -1,3 +1,3 @@
 # Tierpass (nevera-tierpass)
 
-> 🚧 Uskoro.
+> 🚧 Coming soon.

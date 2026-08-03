@@ -1,3 +1,3 @@
-# Economy — Pregled
+# Economy — Overview
 
-> 🚧 Uskoro — dokumentacija za `nevera_economy` se priprema.
+> 🚧 Coming soon — documentation for `nevera_economy` is being prepared.

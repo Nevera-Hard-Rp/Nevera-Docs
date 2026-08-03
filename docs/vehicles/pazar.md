@@ -1,3 +1,3 @@
 # Pazar (nevera-pazar)
 
-> 🚧 Uskoro.
+> 🚧 Coming soon.

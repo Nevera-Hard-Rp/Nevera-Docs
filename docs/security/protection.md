@@ -1,3 +1,3 @@
 # Protection (nevera_protection)
 
-> 🚧 Uskoro.
+> 🚧 Coming soon.

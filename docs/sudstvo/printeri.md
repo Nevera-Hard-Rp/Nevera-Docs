@@ -1,12 +1,12 @@
-# Printeri (nevera_printeri + bl_bridge)
+# Printers (nevera_printeri + bl_bridge)
 
-Kad igrač u inventaru koristi (**Use**) ispunjeni `document_a4`, otvara ga **`nevera_printeri`** (prikazuje ispunjeni HTML obrazac). Bez tog resursa, Use na dokumentu ne radi.
+When a player **Use**s a filled `document_a4` in their inventory, **`nevera_printeri`** opens it (renders the filled HTML form). Without this resource, Use on the document does nothing.
 
-`nevera_printeri` ovisi o **`bl_bridge`** (framework/inventory/target bridge) — printer se neće pokrenuti bez njega.
+`nevera_printeri` depends on **`bl_bridge`** (framework/inventory/target bridge) — the printer will not start without it.
 
-## Instalacija
+## Installation
 
-Oba resursa dolaze uz kupljeni Nevera Court paket, u `Install/companion/`.
+Both resources ship with the purchased Nevera Court pack, in `Install/companion/`.
 
 ```
 resources/[nevera]/bl_bridge/
@@ -14,7 +14,7 @@ resources/[nevera]/nevera_printeri/
 resources/[nevera]/Nevera_Court/
 ```
 
-### server.cfg redoslijed
+### server.cfg order
 
 ```cfg
 setr bl:framework   "qbx"     # qb | esx | qbx
@@ -31,16 +31,16 @@ ensure nevera_printeri
 ensure Nevera_Court
 ```
 
-## Fizički printeri (mapa)
+## Physical printers (map)
 
-Printer objekti se postavljaju u svijetu (small/medium/large), mogu biti:
+Printer objects are placed in the world (small/medium/large) and can be:
 
-- **Javni** — svi mogu koristiti
-- **Po poslu** — samo određeni job
-- **Zaključani kodom** — treba kod koji postavi vlasnik pri zaključavanju
+- **Public** — anyone can use them
+- **Job-restricted** — only a specific job
+- **Code-locked** — needs a code set by the owner when locking
 
-Printer troši papir i toner iz inventara igrača; oboje se pune preko `ox_target` interakcije na printeru.
+The printer consumes paper and toner from the player's inventory; both are refilled via `ox_target` interaction on the printer.
 
-## Simptomi kad printer nije pokrenut
+## Symptom when the printer isn't running
 
-Notify: *nevera_printeri must be started to view documents.* → `ensure nevera_printeri` (i `bl_bridge`), pa restart.
+Notify: *nevera_printeri must be started to view documents.* → `ensure nevera_printeri` (and `bl_bridge`), then restart.

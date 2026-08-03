@@ -1,3 +1,3 @@
-# Changelog — svi resursi
+# Changelog — All Resources
 
-> 🚧 Uskoro — zajednički changelog za sve Nevera resurse.
+> 🚧 Coming soon — shared changelog covering all Nevera resources.

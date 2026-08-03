@@ -1,3 +1,3 @@
 # Backpack (nevera_backpack)
 
-> 🚧 Uskoro.
+> 🚧 Coming soon.

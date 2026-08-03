@@ -1,14 +1,14 @@
 # Nevera Docs
 
-Dobrodošao/la u dokumentaciju za Nevera FiveM resurse.
+Welcome to the documentation for Nevera FiveM resources.
 
-Odaberi resurs u meniju lijevo. Stranice koje još nisu napisane označene su kao **"Uskoro"**.
+Pick a resource from the menu on the left. Pages that aren't written yet are marked **"Coming soon"**.
 
-## Dostupno sada
+## Available now
 
-- **[Sudstvo (Nevera Court)](docs/sudstvo/overview.md)** — kompletan DOJ / sudski sustav
-- **[Weather (Realtime Weather & Clock)](docs/weather/overview.md)** — besplatna skripta, realno vrijeme i sat
+- **[Court (Nevera Court)](docs/sudstvo/overview.md)** — full DOJ / court system
+- **[Weather (Realtime Weather & Clock)](docs/weather/overview.md)** — free script, real-world weather and clock
 
-## Uskoro
+## Coming soon
 
-Economy, Inventory, Security, Vehicles, Discord bot i ostali resursi — dokumentacija se dodaje postupno.
+Economy, Inventory, Security, Vehicles, Discord bot, and other resources — documentation is being added over time.

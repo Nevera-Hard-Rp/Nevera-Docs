@@ -1,3 +1,3 @@
 # Tehnički pregled (n_tehnicki)
 
-> 🚧 Uskoro.
+> 🚧 Coming soon.

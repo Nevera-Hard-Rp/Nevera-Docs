@@ -1,7 +1,7 @@
-# Uvod
+# Introduction
 
-Ova stranica pokriva instalaciju, konfiguraciju i korištenje svih Nevera resursa za FiveM.
+This site covers installation, configuration, and usage for all Nevera FiveM resources.
 
-Svaki resurs ima svoju sekciju u meniju lijevo — instalacija, konfiguracija, FAQ i (gdje postoji) changelog.
+Each resource has its own section in the menu on the left — installation, configuration, FAQ, and (where available) a changelog.
 
-Podrška: Discord · Tebex.
+Support: Discord · Tebex.

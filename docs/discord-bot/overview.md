@@ -1,3 +1,3 @@
-# Discord bot — Pregled
+# Discord Bot — Overview
 
-> 🚧 Uskoro.
+> 🚧 Coming soon.

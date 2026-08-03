@@ -1,3 +1,3 @@
 # Stražar
 
-> 🚧 Uskoro.
+> 🚧 Coming soon.

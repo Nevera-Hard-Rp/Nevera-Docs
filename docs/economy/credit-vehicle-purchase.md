@@ -1,3 +1,3 @@
-# Kredit za kupnju vozila
+# Vehicle Purchase Credit
 
-> 🚧 Uskoro.
+> 🚧 Coming soon.
