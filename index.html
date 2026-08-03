@@ -199,6 +199,15 @@
               var a = document.createElement('a');
               a.href = basePath + '?id=' + h.id;
               a.textContent = h.textContent;
+              // Docsify's router only re-scrolls on a full route change — it
+              // ignores a `?id=` change on the route we're already viewing.
+              // Scroll manually and update the URL bar without going through
+              // the hash-router (pushState doesn't fire hashchange).
+              a.addEventListener('click', function (e) {
+                e.preventDefault();
+                history.pushState(null, '', a.getAttribute('href'));
+                h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              });
               li.appendChild(a);
               list.appendChild(li);
             });
