@@ -186,13 +186,18 @@
             title.textContent = 'On this page';
             toc.appendChild(title);
 
+            // Docsify uses the full hash as a router path (#/route?id=heading),
+            // not a plain fragment — a bare "#heading-id" gets treated as a
+            // page path and 404s. Build links relative to the current route.
+            var basePath = (window.location.hash || '#/').split('?')[0];
+
             var list = document.createElement('ul');
             headings.forEach(function (h, i) {
               if (!h.id) h.id = 'nevera-heading-' + i;
               var li = document.createElement('li');
               if (h.tagName === 'H3') li.className = 'nevera-toc-sub';
               var a = document.createElement('a');
-              a.href = '#' + h.id;
+              a.href = basePath + '?id=' + h.id;
               a.textContent = h.textContent;
               li.appendChild(a);
               list.appendChild(li);
