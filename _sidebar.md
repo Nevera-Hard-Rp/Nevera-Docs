@@ -3,9 +3,17 @@
 
 - **Court (Nevera Court)**
   - [Overview](docs/sudstvo/overview.md)
+  - [Dependencies](docs/sudstvo/dependencies.md)
   - [Installation](docs/sudstvo/installation.md)
+  - [Configuration](docs/sudstvo/configuration.md)
+  - [Roles & Permissions](docs/sudstvo/roles.md)
+  - [Legal Forms](docs/sudstvo/legal-forms.md)
+  - [Localization](docs/sudstvo/localization.md)
+  - [Discord & Webhooks](docs/sudstvo/discord-webhooks.md)
+  - [Exports & Integration](docs/sudstvo/exports.md)
   - [Staff & Player Guide](docs/sudstvo/court-flow.md)
   - [Printers](docs/sudstvo/printeri.md)
+  - [Troubleshooting](docs/sudstvo/troubleshooting.md)
   - [Changelog](docs/sudstvo/changelog.md)
 
 - **Weather (Realtime Weather & Clock)**

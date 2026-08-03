@@ -92,16 +92,6 @@ Also run `nevera_printeri/sql/nevera_printeri.sql` once.
 - [ ] Print → inventory → **Use** → filled document
 - [ ] Courthouse coords / archive passwords / webhooks configured for your map
 
-## Troubleshooting
+Ran into a problem after installing? See [Troubleshooting](troubleshooting.md).
 
-| Problem | Fix |
-|---------|-----|
-| Resource won't start | Check `oxmysql` + `ox_lib`; read console |
-| Panel shows **Citizen** despite SQL | `doj_roles.citizenid` = live framework id (ESX = `users.identifier`); relog |
-| NKZ shows 0 laws | Run `02_seed_laws_english.sql` |
-| Laws still English on HR/DE/FR/ES | Run `03_seed_laws_i18n.sql`; set `Config.Locale`; restart |
-| `No such export viewDocument…` | Item `export` must match **folder name** casing |
-| Use deletes item / nothing opens | `consume = 0` + start **`nevera_printeri`** |
-| Save / Print error | Add `document_a4` + PNG; check `[sv_printer]` console log |
-| Archive won't open | Role + `Config.Archive.Passwords` |
-| Discord screenshots fail | `nevera_court_imgbb_key` + `nevera_court_wh_*` convars |
+Next: [Configuration](configuration.md) to set fine amounts, map locations, and archive passwords for your server.

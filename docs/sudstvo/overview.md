@@ -17,16 +17,21 @@ ESX · QBCore · Qbox · Standalone (`Config.Framework = 'auto'`)
 
 `en` · `hr` · `de` · `fr` · `es` — full UI + A4 forms + NKZ titles (`Config.Locale`)
 
-## Dependencies
+See [Dependencies](dependencies.md) for the full requirements list.
 
-| Resource | Required |
-|----------|----------|
-| `oxmysql` | Yes |
-| `ox_lib` | Yes |
-| Framework (ESX/QB/Qbox) or standalone | Yes |
-| `ox_inventory` | Yes (print/archive) |
-| **`nevera_printeri`** | Yes — see [Printers](printeri.md) |
-| **`bl_bridge`** | Yes — printer dependency |
-| `ox_target` | Recommended |
+## Where to go next
 
-Continue: [Installation](installation.md) · [Staff & Player Guide](court-flow.md) · [Printers](printeri.md) · [Changelog](changelog.md)
+| Page | For |
+|---|---|
+| [Dependencies](dependencies.md) | What needs to be installed alongside Nevera Court |
+| [Installation](installation.md) | Step-by-step first install |
+| [Configuration](configuration.md) | Fine amounts, map locations, archive passwords, prison, currency |
+| [Roles & Permissions](roles.md) | Who can do what, setting the first admin |
+| [Legal Forms](legal-forms.md) | The 37 A4 templates × 5 languages |
+| [Localization](localization.md) | Changing / adding a language |
+| [Discord & Webhooks](discord-webhooks.md) | System logs vs. printed-form transcripts |
+| [Exports & Integration](exports.md) | Calling Nevera Court from other resources / MDT |
+| [Staff & Player Guide](court-flow.md) | How to actually use the panel in-game |
+| [Printers](printeri.md) | The `nevera_printeri` + `bl_bridge` companion system |
+| [Troubleshooting](troubleshooting.md) | Common problems and fixes |
+| [Changelog](changelog.md) | Version history |
