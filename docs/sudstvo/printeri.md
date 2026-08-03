@@ -1,17 +1,14 @@
-# Printers (nevera_printeri + bl_bridge)
+# Printers (nevera_printeri)
 
 When a player **Use**s a filled `document_a4` in their inventory, **`nevera_printeri`** opens it (renders the filled HTML form). Without this resource, Use on the document does nothing.
 
-`nevera_printeri` depends on **`bl_bridge`** (framework/inventory/target bridge) — the printer will not start without it.
-
-> `bl_bridge` is a third-party open-source resource by **Byte Labs Studio** (GPLv3), bundled here for convenience. Source / latest version: **https://github.com/Byte-Labs-Studio/bl_bridge**
+`nevera_printeri` is self-contained — it auto-detects QB/ESX/Qbox internally and uses `ox_lib` + `ox_inventory` + `ox_target` directly. No separate framework bridge is required.
 
 ## Installation
 
-Both resources ship with the purchased Nevera Court pack, in `Install/companion/`.
+Ships with the purchased Nevera Court pack, in `Install/companion/`.
 
 ```
-resources/[nevera]/bl_bridge/
 resources/[nevera]/nevera_printeri/
 resources/[nevera]/Nevera_Court/
 ```
@@ -19,16 +16,10 @@ resources/[nevera]/Nevera_Court/
 ### server.cfg order
 
 ```cfg
-setr bl:framework   "qbx"     # qb | esx | qbx
-setr bl:inventory   "ox"
-setr bl:target      "ox"
-setr bl:context     "ox"
-setr bl:progressbar "ox"
-setr bl:radial      "ox"
-setr bl:notify      "ox"
-setr bl:textui      "ox"
-
-ensure bl_bridge
+ensure oxmysql
+ensure ox_lib
+ensure ox_inventory
+ensure ox_target
 ensure nevera_printeri
 ensure Nevera_Court
 ```
@@ -45,4 +36,4 @@ The printer consumes paper and toner from the player's inventory; both are refil
 
 ## Symptom when the printer isn't running
 
-Notify: *nevera_printeri must be started to view documents.* → `ensure nevera_printeri` (and `bl_bridge`), then restart.
+Notify: *nevera_printeri must be started to view documents.* → `ensure nevera_printeri`, then restart.

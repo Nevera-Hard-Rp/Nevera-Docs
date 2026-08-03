@@ -6,7 +6,6 @@ Use the buyer pack under `Install/` (SQL, items, companion printer, Discord conv
 
 ```text
 resources/[nevera]/Nevera_Court/          ← this resource
-resources/[nevera]/bl_bridge/             ← copy from Install/companion/bl_bridge
 resources/[nevera]/nevera_printeri/       ← copy from Install/companion/nevera_printeri
 ```
 
@@ -65,17 +64,6 @@ ensure ox_target
 ensure ox_inventory
 ensure [your-framework]   # es_extended / qb-core / qbx_core
 
-# bl_bridge (required by nevera_printeri) — Qbox example:
-setr bl:framework   "qbx"
-setr bl:inventory   "ox"
-setr bl:target      "ox"
-setr bl:context     "ox"
-setr bl:progressbar "ox"
-setr bl:radial      "ox"
-setr bl:notify      "ox"
-setr bl:textui      "ox"
-
-ensure bl_bridge          # from Install/companion/
 ensure nevera_printeri    # from Install/companion/ — before Court
 ensure Nevera_Court       # exact folder name
 ```
@@ -88,7 +76,7 @@ Also run `nevera_printeri/sql/nevera_printeri.sql` once.
 - [ ] `Config.Locale` + `Config.Framework = 'auto'` (or `'esx'` / `'qb'` / `'qbox'`)
 - [ ] Supreme Court in `doj_roles` (ESX: id = `users.identifier`)
 - [ ] `document_a4` with `consume = 0` + correct `export`
-- [ ] `bl_bridge` + `nevera_printeri` copied and started
+- [ ] `nevera_printeri` copied and started
 - [ ] Print → inventory → **Use** → filled document
 - [ ] Courthouse coords / archive passwords / webhooks configured for your map
 

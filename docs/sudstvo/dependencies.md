@@ -8,8 +8,7 @@
 | `ox_lib` | **Yes** |
 | Framework (ESX / QB / Qbox) or `standalone` | **Yes** |
 | Inventory (**ox_inventory** recommended) | **Yes** (print / archive) |
-| **`nevera_printeri`** | **Yes** — inventory Use opens the filled form — see [Printers](printeri.md) |
-| **`bl_bridge`** | **Yes** — dependency of `nevera_printeri` |
+| **`nevera_printeri`** | **Yes** — inventory Use opens the filled form — see [Printers](printeri.md). Self-contained, no separate bridge needed |
 | MDT (ps-mdt / tk_mdt / ox_mdt / Advanced) | Optional |
 | `ox_target` | Recommended (courthouse zones; F7 works without it) |
 | Phone / prison / `peleg-billing` | Optional |
@@ -17,13 +16,6 @@
 **Optional:** `nevera_menuguard` (soft lock, prevents multiple menus opening at once).
 
 **OneSync** is recommended for a live server.
-
-### Third-party component: `bl_bridge`
-
-`bl_bridge` is included in the install package as a required dependency of `nevera_printeri`. It is **not our code** — it's an open-source resource by **Byte Labs Studio**, licensed under **GPLv3**.
-
-- Original source / updates: **https://github.com/Byte-Labs-Studio/bl_bridge**
-- Included as-is for convenience so the install works out of the box; you're free to grab the latest version from the link above instead.
 
 ## Framework compatibility
 

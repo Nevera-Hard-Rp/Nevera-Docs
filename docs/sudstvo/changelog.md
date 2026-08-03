@@ -10,5 +10,5 @@ Initial Tebex release. First-install only — no upgrade/migration scripts are s
 - Multi-phone bridge: LB, Quasar, YSeries, 17mov, GKS, NPWD, qb-phone
 - MDT bridge: tk_mdt (full), Advanced (manual), ps-mdt (patch), ox_mdt (events)
 - 5 languages: `en` · `hr` · `de` · `fr` · `es` — full UI + 37 A4 forms per language + NKZ titles
-- Companion printer system (`nevera_printeri` + `bl_bridge`) for filled-form viewing
+- Companion printer system (`nevera_printeri`, self-contained) for filled-form viewing
 - Discord integration: system event webhooks + printed-form transcript screenshots
