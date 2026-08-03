@@ -106,6 +106,27 @@
     @media (min-width: 1251px) {
       .content { margin-right: 260px; }
     }
+
+    /* ---------- Collapsible sidebar categories ---------- */
+    .sidebar-nav li.nevera-has-children > .nevera-toggle-label {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+    }
+    .sidebar-nav li.nevera-has-children > .nevera-toggle-label .nevera-chevron {
+      transition: transform 0.15s ease;
+      opacity: 0.5;
+      font-size: 10px;
+      margin-left: 6px;
+    }
+    .sidebar-nav li.nevera-collapsed > .nevera-toggle-label .nevera-chevron {
+      transform: rotate(-90deg);
+    }
+    .sidebar-nav li.nevera-collapsed > ul {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -191,6 +212,44 @@
               });
             }, { rootMargin: '0px 0px -70% 0px' });
             headings.forEach(function (h) { observer.observe(h); });
+
+            // ---- Collapsible sidebar categories (accordion) ----
+            var topLis = document.querySelectorAll('.sidebar-nav > ul > li');
+            topLis.forEach(function (li) {
+              var nestedUl = null;
+              for (var i = 0; i < li.children.length; i++) {
+                if (li.children[i].tagName === 'UL') { nestedUl = li.children[i]; break; }
+              }
+              if (!nestedUl) return;
+
+              li.classList.add('nevera-has-children');
+
+              var label = null;
+              for (var j = 0; j < li.childNodes.length; j++) {
+                var n = li.childNodes[j];
+                if (n === nestedUl) continue;
+                if (n.nodeType === 1) { label = n; break; }
+              }
+              if (!label) return;
+
+              if (!label.classList.contains('nevera-toggle-label')) {
+                label.classList.add('nevera-toggle-label');
+                var chevron = document.createElement('span');
+                chevron.className = 'nevera-chevron';
+                chevron.textContent = '▾';
+                label.appendChild(chevron);
+                label.addEventListener('click', function () {
+                  li.classList.toggle('nevera-collapsed');
+                });
+              }
+
+              var hasActive = nestedUl.querySelector('.active') !== null;
+              if (hasActive) {
+                li.classList.remove('nevera-collapsed');
+              } else {
+                li.classList.add('nevera-collapsed');
+              }
+            });
           });
         }
       ]
