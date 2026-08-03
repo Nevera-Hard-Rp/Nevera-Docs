@@ -4,6 +4,8 @@ When a player **Use**s a filled `document_a4` in their inventory, **`nevera_prin
 
 `nevera_printeri` depends on **`bl_bridge`** (framework/inventory/target bridge) — the printer will not start without it.
 
+> `bl_bridge` is a third-party open-source resource by **Byte Labs Studio** (GPLv3), bundled here for convenience. Source / latest version: **https://github.com/Byte-Labs-Studio/bl_bridge**
+
 ## Installation
 
 Both resources ship with the purchased Nevera Court pack, in `Install/companion/`.

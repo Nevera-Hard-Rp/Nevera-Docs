@@ -18,6 +18,13 @@
 
 **OneSync** is recommended for a live server.
 
+### Third-party component: `bl_bridge`
+
+`bl_bridge` is included in the install package as a required dependency of `nevera_printeri`. It is **not our code** — it's an open-source resource by **Byte Labs Studio**, licensed under **GPLv3**.
+
+- Original source / updates: **https://github.com/Byte-Labs-Studio/bl_bridge**
+- Included as-is for convenience so the install works out of the box; you're free to grab the latest version from the link above instead.
+
 ## Framework compatibility
 
 | Framework | Supported |
