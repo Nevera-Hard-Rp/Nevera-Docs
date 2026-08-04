@@ -10,7 +10,7 @@
 | Inventory (**ox_inventory** recommended) | **Yes** (print / archive) |
 | **`nevera_printeri`** | **Yes** — inventory Use opens the filled form — see [Printers](printeri.md). Self-contained, no separate bridge needed |
 | MDT (ps-mdt / tk_mdt / ox_mdt / Advanced) | Optional |
-| `ox_target` | Recommended (courthouse zones; F7 works without it) |
+| `ox_target` | Recommended (courthouse zones; F5 panel key works without it) |
 | Phone / prison / `peleg-billing` | Optional |
 
 **Optional:** `nevera_menuguard` (soft lock, prevents multiple menus opening at once).
