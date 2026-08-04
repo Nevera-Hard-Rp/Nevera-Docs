@@ -22,11 +22,79 @@ Edit and run `Install/sql/04_first_supreme_court.sql` with your character's iden
 
 ## How a role is determined
 
-A player's DOJ role comes from the `doj_roles` database table — **not** from their ESX group or QBCore job alone. If the panel shows "Citizen" for someone who should have a role, check that `doj_roles.citizenid` matches their live framework identifier exactly, then have them relog.
+A player's DOJ role comes from the **`doj_roles` database table first** — not from their ESX group or QBCore job/grade. If the panel shows "Citizen" for someone who should have a role, check that `doj_roles.citizenid` matches their live framework identifier exactly, then have them relog.
 
-## Optional ACE / group mappings
+**Only if there is no `doj_roles` row** does the system fall back to the player's **job name** (not grade):
 
-`Config.Permissions` can map ACE groups or job names into DOJ context for auxiliary checks (e.g. which job can execute a commitment order) — this is separate from the core `doj_roles` role assignment.
+| Job name | Maps to |
+|---|---|
+| `judge` | Judge |
+| `district_attorney`, `prosecutor` | Prosecutor |
+| `lawyer`, `defense_attorney` | Defense Attorney |
+| `public_defender` | Public Defender |
+| `police`, `sheriff`, `bcso`, `sasp`, `lspd`, `correctional`, `doc`, `judicial_police` | Police |
+| Group `supreme_court`, `admin`, `superadmin` | Supreme Court |
+
+**Grade is not used for this fallback**, with two narrow exceptions:
+- A police officer with `job.grade.level >= 4` is also treated as Prosecutor for permission checks (fixed, not configurable).
+- One specific form-filing check accepts a police officer as `police` role if `job.grade.level >= Config.Permissions.policeMinGrade` (default `2`, set in `config.lua`).
+
+**Important:** if your server uses **one combined job** for the whole court staff (e.g. a single `doj` job with grades like `Associate → Prosecutor → Judge → Chief Justice`), the job-name fallback **cannot** tell those grades apart — every grade of that job maps to the same thing (or nothing, if the job name isn't in the table above). In that setup you **must** assign roles through `doj_roles` for every DOJ member; don't rely on the job/grade alone.
+
+### Example: separate jobs (qb-core `shared/jobs.lua`)
+
+If you'd rather use the job-name fallback instead of manually managing `doj_roles`, give each DOJ role its **own job**, one grade is enough:
+
+```lua
+['judge'] = {
+    label = 'Judge',
+    defaultDuty = true,
+    grades = {
+        ['0'] = { name = 'Judge', payment = 150 },
+    },
+},
+['district_attorney'] = {
+    label = 'District Attorney',
+    defaultDuty = true,
+    grades = {
+        ['0'] = { name = 'Prosecutor', payment = 120 },
+    },
+},
+['lawyer'] = {
+    label = 'Defense Attorney',
+    defaultDuty = true,
+    grades = {
+        ['0'] = { name = 'Attorney', payment = 100 },
+    },
+},
+['public_defender'] = {
+    label = 'Public Defender',
+    defaultDuty = true,
+    grades = {
+        ['0'] = { name = 'Public Defender', payment = 90 },
+    },
+},
+```
+
+Qbox (`qbx_core`) doesn't ship `shared/jobs.lua` — add the same jobs through your jobs database/admin tool instead, keeping the same job names.
+
+### Example: ESX (SQL `jobs` / `job_grades`)
+
+```sql
+INSERT INTO `jobs` (`name`, `label`) VALUES
+('judge', 'Judge'),
+('district_attorney', 'District Attorney'),
+('lawyer', 'Defense Attorney'),
+('public_defender', 'Public Defender');
+
+INSERT INTO `job_grades` (`job_name`, `grade`, `name`, `label`, `salary`) VALUES
+('judge', 0, 'judge', 'Judge', 0),
+('district_attorney', 0, 'da', 'District Attorney', 0),
+('lawyer', 0, 'attorney', 'Attorney', 0),
+('public_defender', 0, 'pubdef', 'Public Defender', 0);
+```
+
+Police already have their own job from your existing police script (`police`, `sheriff`, `bcso`, `sasp`, `lspd`, …) — no extra setup needed there, it's already in the recognized list above.
 
 ## Archive access
 
