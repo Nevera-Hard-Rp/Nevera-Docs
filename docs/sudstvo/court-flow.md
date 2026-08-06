@@ -21,6 +21,7 @@ DEFENSE / PUBLIC DEFENDER
 
 CLERK
   • Filing / hearing support (role-dependent)
+  • Approve/deny citizen requests (Requests tab)
 
 JUDGE
   • Approve warrants, bail, schedule hearings, pick jury, fines, verdicts
@@ -112,6 +113,19 @@ Snapshot of open work (counts / shortcuts). Start here to see if anything needs 
 
 **Tip:** printing does **not** replace opening a Case or scheduling a Hearing — it produces the paper trail.
 
+### 4.3a Requests (Judge / Supreme Court / Clerk only)
+
+**Purpose:** review citizen-filed **requests** — Name Change and Certificate of No Criminal Record — separately from staff-driven Forms.
+
+**How to use:**
+
+1. Open **Requests**, filter by status (Pending / Approved / Denied / All)
+2. Click a row to see the submitted fields and any fee paid
+3. **Approve** or **Deny** (optional reason)
+4. For an approved/pending Certificate of No Criminal Record request: **Print certificate** jumps to **Forms** with the official certificate pre-filled from the citizen's request (name, DOB, address) — staff still reviews and prints it like any other form
+
+A request is **not** the official document — the certificate/name-change order printed from Forms is what has legal weight.
+
 ### 4.4 Warrants
 
 **Purpose:** arrest / search warrant **requests** and **judicial decisions**.
@@ -195,14 +209,15 @@ After Guilty + custody: `/doj_commitment` (police / DOC / judges per config). No
 
 ## 7. Role → panel access
 
-| Role | Cases | Forms | Warrants | Bail | Hearings | Jury manage | Fines | Law | Admin |
-|------|:-----:|:-----:|:--------:|:----:|:--------:|:-----------:|:-----:|:---:|:-----:|
-| Supreme Court | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Judge | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — |
-| Prosecutor | ✓ | ✓ | ✓ | ~ | ✓ | — | ~ | ✓ | — |
-| Defense / PD | ✓ | ✓ | — | ~ | ✓ | — | — | ✓ | — |
-| Police | ~ | ✓ | request | — | ~ | — | — | ✓ | — |
-| Citizen | ~ | limited | — | ~ | — | register only | — | ~ | — |
+| Role | Cases | Forms | Requests | Warrants | Bail | Hearings | Jury manage | Fines | Law | Admin |
+|------|:-----:|:-----:|:--------:|:--------:|:----:|:--------:|:-----------:|:-----:|:---:|:-----:|
+| Supreme Court | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Judge | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — |
+| Clerk | ~ | ✓ | ✓ | — | — | ~ | — | — | ✓ | — |
+| Prosecutor | ✓ | ✓ | — | ✓ | ~ | ✓ | — | ~ | ✓ | — |
+| Defense / PD | ✓ | ✓ | — | — | ~ | ✓ | — | — | ✓ | — |
+| Police | ~ | ✓ | — | request | — | ~ | — | — | ✓ | — |
+| Citizen | ~ | limited | files requests | — | ~ | — | register only | — | ~ | — |
 
 `~` = limited / view / situational. Exact form list = `Enums.FormsByRole` in `shared/enums.lua`.
 

@@ -8,7 +8,7 @@
 | Defense attorney | `defense_attorney` | Cases, defense forms, hearings |
 | Public defender | `public_defender` | Same as defense |
 | Police | `police` | Affidavit, warrant requests, pre-filing |
-| Clerk | `clerk` | Forms / hearings support |
+| Clerk | `clerk` | Forms / hearings support, **approve/deny citizen requests** (Name Change, Certificate of No Criminal Record) |
 | Citizen | `citizen` | Limited forms, jury register, personal archive (default) |
 
 Assignable DB roles on a new install: `supreme_court`, `judge`, `prosecutor`, `defense_attorney`, `public_defender`, `police`.

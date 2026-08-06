@@ -29,6 +29,22 @@ Config.Currency = '€'   -- EU / euro servers
 
 Changing the symbol does **not** convert amounts. Edit the numbers in `config_fines.lua` / `Config.Economy` to match your server economy.
 
+## Court filing fees
+
+Citizen-filed **requests** (Name Change, Certificate of No Criminal Record) charge a fee from the filer's bank account when submitted — staff prints of an already-issued certificate are free.
+
+```lua
+Config.Fees = {
+    Enabled       = true,
+    Account       = 'bank',   -- which framework account to charge
+    CurrencyLabel = '€',      -- shown in the insufficient-funds notify
+    request_certificate_no_criminal = 500,
+    name_change_request              = 2000,
+}
+```
+
+Set `Config.Fees.Enabled = false` to disable all filing fees. If the citizen's bank balance is below the fee, the request is rejected with an "insufficient funds" notify and nothing is saved.
+
 ## Fines & bail amounts (fully editable)
 
 All preset fine / bail values live in `config_fines.lua`. Change any `fine`, `bail`, `hut`, or `label` — no code edits needed.

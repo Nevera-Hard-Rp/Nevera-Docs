@@ -1,5 +1,19 @@
 # Nevera Court — Changelog
 
+## [1.1.0] — Citizen requests & court filing fees
+
+**Added**
+- New **Requests** panel tab (Judge / Supreme Court / Clerk) — review and approve/deny citizen-filed requests separately from staff Forms
+- New citizen-filed request form: **Request for Certificate of No Criminal Record**, alongside the existing Name Change Request
+- **Clerk** role can now approve/deny citizen requests (previously Judge/Supreme Court only)
+- `Config.Fees` — configurable court filing fee charged from the citizen's bank account on request submission (staff prints of an already-issued certificate stay free)
+- "Print certificate" shortcut: approving a certificate request jumps to Forms with the official document pre-filled from the request
+- Redesigned **Certificate of No Criminal Record** template (all 5 languages) with an optional 2D court seal toggle
+- OX_Core framework bridge (`Config.Framework = 'ox'`)
+
+**Changed**
+- Printed-document storage moved to a slim `doc_id` reference resolved against the database, instead of baking the full HTML into inventory item metadata (fixes large documents failing to sync via `ox_inventory`)
+
 ## [1.0.0] — First release
 
 Initial Tebex release. First-install only — no upgrade/migration scripts are shipped in this version.

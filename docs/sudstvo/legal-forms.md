@@ -10,6 +10,19 @@
 - Printing gives a `document_a4` inventory item (+ an optional Discord court transcript — see [Discord & Webhooks](discord-webhooks.md))
 - Judge approve / deny / sign workflow for forms that need it
 
+## Citizen requests (Name Change / Certificate of No Criminal Record)
+
+Two form types are **citizen-filed requests**, not direct court filings — a citizen submits a request, and staff (Judge, Supreme Court, or **Clerk**) review it in the **Requests** tab before anything official is issued:
+
+| Form | What the citizen submits | What staff does |
+|------|---------------------------|------------------|
+| `name_change_request` | Requested new legal name + reason | Approve / deny |
+| `request_certificate_no_criminal` | Purpose (employment, licence, court, …) | Approve / deny, then **Print certificate** — jumps to Forms with the official `certificate_no_criminal_record` pre-filled from the request |
+
+A court filing fee is charged from the citizen's bank account on submission — see [Configuration → Court filing fees](configuration.md#court-filing-fees).
+
+The **Certificate of No Criminal Record** itself also has an optional 2D court seal (toggle on the form) — applying it is gated by `Config.Seal.Roles` (typically Judge / Clerk / Supreme Court).
+
 ## File locations
 
 | `Config.Locale` | Folder (edit `public`, ship `dist`) |
