@@ -17,6 +17,7 @@
 - Printed-document storage moved to a slim `doc_id` reference resolved against the database, instead of baking the full HTML into inventory item metadata (fixes large documents failing to sync via `ox_inventory`)
 - Inventory bridge docs split into **Tested** (ox_inventory, qb-inventory/qbox, ps-inventory) vs **Compatibility layer** (qs, tgiann, codem, origen, ak47) support tiers
 - `config_fines.lua` no longer ships an unused legacy Croatian fine-key alias table — `Config.Fines` (English keys) is unchanged and is the only thing a fresh install ever uses
+- `Install/sql/` trimmed to the 4 files a first install actually needs (`01`→`04`) — leftover migration scripts for upgrading a pre-existing older schema were removed, matching this being a first-install-only release
 
 ## [1.0.0] — First release
 
