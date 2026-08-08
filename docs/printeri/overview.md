@@ -16,4 +16,4 @@ Without this resource running, Use on a printed document does nothing — the do
 
 `nevera_printeri` is self-contained — it auto-detects QBCore / ESX / Qbox internally and talks to `ox_lib`, `ox_inventory`, and `ox_target` directly. **No separate framework bridge is required.**
 
-It is not sold or used standalone — it ships inside the Nevera Court package (`Install/companion/nevera_printeri`) specifically so document printing works out of the box. Court owns and creates the `document_a4` item; `nevera_printeri` is what makes Use on that item actually do something.
+It ships inside the Nevera Court package (`Install/companion/nevera_printeri`) so document printing works out of the box. Court owns and creates the `document_a4` item; `nevera_printeri` is what makes Use on that item actually do something.

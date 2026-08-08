@@ -3,6 +3,7 @@
 ## [1.0.0] — First release
 
 **Fixed before release**
+- **SQL schema was missing 3 columns the code actively reads/writes on every print** — `nevera_printeri.total_prints` (written by the print handler, read by the status display) and `nevera_dokumenti.char_name` / `nevera_dokumenti.print_mode` (written by the audit-log insert, read by the history display). Every print threw a SQL "unknown column" error, silently breaking print counts, printer status, and print history on a fresh install. Fixed in `sql/nevera_printeri.sql`; existing installs need an `ALTER TABLE` to add the 3 columns without losing data (`CREATE TABLE IF NOT EXISTS` doesn't retroactively add columns).
 - `Config.TonerUsage` was defined twice in `config.lua` (a dead stub, silently shadowed by the real bw/color-aware table) — removed the dead definition
 - Added `qbx_core` fallback to `GetPlayerCitizenId`/`GetPlayerJob` — these only checked `qb-core` and `es_extended`, so ownership tracking and job-restricted printers silently failed on a clean Qbox server (no `qb-core` compat export)
 - `no_toner_inv` (all 4 languages) and `no_paper_inv` (German, Spanish) wrongly said the printer's own stash was empty — paper and toner are actually pulled from the player's inventory, not a printer-side stash

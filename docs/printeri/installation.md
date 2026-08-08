@@ -11,7 +11,14 @@ Nevera_Court (main resource)       →  resources/[nevera]/Nevera_Court
 
 ## 2. SQL (run once)
 
-Import `nevera_printeri/sql/nevera_printeri.sql` — creates the table that tracks placed printers (position, owner, lock state).
+Import `nevera_printeri/sql/nevera_printeri.sql` — creates the two tables the resource needs: `nevera_printeri` (placed printers — position, owner, lock state, print count) and `nevera_dokumenti` (print history / audit log).
+
+> **Upgrading an install from before this schema fix?** Run this instead of re-importing the full file — `CREATE TABLE IF NOT EXISTS` won't add columns to a table that already exists:
+> ```sql
+> ALTER TABLE `nevera_printeri` ADD COLUMN `total_prints` INT(11) NOT NULL DEFAULT 0;
+> ALTER TABLE `nevera_dokumenti` ADD COLUMN `char_name` VARCHAR(60) NOT NULL DEFAULT '';
+> ALTER TABLE `nevera_dokumenti` ADD COLUMN `print_mode` ENUM('bw','color') NOT NULL DEFAULT 'bw';
+> ```
 
 ## 3. Register the inventory items
 
