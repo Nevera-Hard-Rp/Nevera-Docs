@@ -10,13 +10,6 @@ resources/[nevera]/nevera_printeri/
 
 Import `nevera_printeri/sql/nevera_printeri.sql` — creates the two tables the resource needs: `nevera_printeri` (placed printers — position, owner, lock state, print count) and `nevera_dokumenti` (print history / audit log).
 
-> **Upgrading an install from before this schema fix?** Run this instead of re-importing the full file — `CREATE TABLE IF NOT EXISTS` won't add columns to a table that already exists:
-> ```sql
-> ALTER TABLE `nevera_printeri` ADD COLUMN `total_prints` INT(11) NOT NULL DEFAULT 0;
-> ALTER TABLE `nevera_dokumenti` ADD COLUMN `char_name` VARCHAR(60) NOT NULL DEFAULT '';
-> ALTER TABLE `nevera_dokumenti` ADD COLUMN `print_mode` ENUM('bw','color') NOT NULL DEFAULT 'bw';
-> ```
-
 ## 3. Register the inventory items
 
 `nevera_printeri` needs 11 items registered in `ox_inventory` — 3 printers, paper, 6 size/color-matched toner cartridges, and the `document_a4` item it prints to. See [Configuration](configuration.md#required-items) for the full list.
