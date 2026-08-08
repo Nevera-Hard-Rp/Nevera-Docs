@@ -26,6 +26,13 @@
   - [Troubleshooting](/docs/weather/troubleshooting.md)
   - [Changelog](/docs/weather/changelog.md)
 
+<!--
+NOT READY YET — sections below have no real docs content, kept here as a
+skeleton for when those resources are actually written up. Do not
+uncomment until each page has real content (Docsify renders bare `#`
+comments literally, they don't hide anything — HTML comments are the only
+thing that actually works here).
+
 - **Economy**
   - [Overview](/docs/economy/overview.md)
   - [Vehicle Credit](/docs/economy/credit-vehicle-purchase.md)
@@ -57,5 +64,6 @@
   - [Tierpass](/docs/misc-resources/tierpass.md)
   - [Tutorial](/docs/misc-resources/tutorial.md)
   - [Smaller Utilities](/docs/misc-resources/smaller-utilities.md)
+-->
 
 - [Changelog (all resources)](/docs/changelog/index.md)
