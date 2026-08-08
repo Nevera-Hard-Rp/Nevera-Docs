@@ -8,7 +8,7 @@ Primary editable file: `config.lua` (escrow-open, safe to edit). Fine table: `co
 Config.Debug     = false
 Config.Locale    = 'en'       -- 'en' | 'hr' | 'de' | 'fr' | 'es'
 Config.Currency  = '$'        -- UI symbol only: '$' or '€' (or any string)
-Config.Framework = 'auto'     -- 'esx' | 'qb' | 'qbox' | 'standalone'
+Config.Framework = 'auto'     -- 'esx' | 'qb' | 'qbox' | 'ox' | 'standalone'
 Config.MDT = {
     provider = 'auto',        -- tk_mdt → ps-mdt → ox_mdt (advanced = manual + resourceName)
     trustedInvokers = { 'ps-mdt', 'tk_mdt' },  -- also gates IssueFine / CreateCommitmentOrder / etc. — see Exports
