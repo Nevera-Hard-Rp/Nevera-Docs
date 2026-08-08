@@ -66,11 +66,11 @@ Whitelist for any image URLs the resource renders — add your own image host he
 
 ```lua
 Config.PublicPrinters = {
-    { label = 'City Hall Printer', type = 'large', model = 'v_med_cor_photocopy', coords = vec4(0.0, 0.0, 0.0, 0.0), public = true, locked = false },
+    -- { label = 'City Hall Printer', type = 'large', model = 'v_med_cor_photocopy', coords = vec4(0.0, 0.0, 0.0, 0.0), public = true, locked = false },
 }
 ```
 
-Spawned automatically on server start. Fill in real `coords` before going live — the shipped entry is a placeholder. Add more entries for additional fixed locations, or leave the list empty if every printer should be player-placed.
+**Empty by default** — no printer spawns automatically until you add an entry. Uncomment the example and fill in real `coords`, or add your own entries for fixed locations. Leave it empty if every printer should be player-placed instead.
 
 ## Placement
 

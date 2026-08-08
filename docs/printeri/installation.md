@@ -23,7 +23,7 @@ Import `nevera_printeri/sql/nevera_printeri.sql` — creates the table that trac
 
 ## 4. Configure printer locations
 
-`Config.PublicPrinters` in `config.lua` ships with one placeholder entry and `coords = vec4(0.0, 0.0, 0.0, 0.0)` — fill in real world coordinates before going live, or remove the entry if you'd rather staff place printers manually via the placement tool.
+`Config.PublicPrinters` in `config.lua` is **empty by default** — no printer spawns automatically. Uncomment the example entry and fill in real world coordinates for a fixed public printer, or leave it empty and let staff place printers manually via the in-game placement tool instead.
 
 ## Symptom if the printer resource is missing
 
