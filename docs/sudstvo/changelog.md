@@ -18,6 +18,7 @@
 - Inventory bridge docs split into **Tested** (ox_inventory, qb-inventory/qbox, ps-inventory) vs **Compatibility layer** (qs, tgiann, codem, origen, ak47) support tiers
 - `config_fines.lua` no longer ships an unused legacy Croatian fine-key alias table — `Config.Fines` (English keys) is unchanged and is the only thing a fresh install ever uses
 - `Install/sql/` trimmed to the 4 files a first install actually needs (`01`→`04`) — leftover migration scripts for upgrading a pre-existing older schema were removed, matching this being a first-install-only release
+- `nevera_printeri`'s `install/README.md` and `install/ox_items.lua` corrected to use the real toner item names (`toner_small_bw`/`_color`, etc.) that `config.lua`/`shared/enums.lua` actually expect — they had drifted to a simplified single-SKU naming that didn't match the running code
 
 ## [1.0.0] — First release
 
