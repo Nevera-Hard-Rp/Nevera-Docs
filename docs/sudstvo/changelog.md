@@ -10,9 +10,13 @@
 - "Print certificate" shortcut: approving a certificate request jumps to Forms with the official document pre-filled from the request
 - Redesigned **Certificate of No Criminal Record** template (all 5 languages) with an optional 2D court seal toggle
 
+**Fixed**
+- Requests panel (Judge / Supreme Court / Clerk) no longer falls back to Croatian field labels and status text on non-Croatian installs — field labels, Yes/No values, and the decision-reason/fee text are now fully localized in all 5 languages
+
 **Changed**
 - Printed-document storage moved to a slim `doc_id` reference resolved against the database, instead of baking the full HTML into inventory item metadata (fixes large documents failing to sync via `ox_inventory`)
 - Inventory bridge docs split into **Tested** (ox_inventory, qb-inventory/qbox, ps-inventory) vs **Compatibility layer** (qs, tgiann, codem, origen, ak47) support tiers
+- `config_fines.lua` no longer ships an unused legacy Croatian fine-key alias table — `Config.Fines` (English keys) is unchanged and is the only thing a fresh install ever uses
 
 ## [1.0.0] — First release
 

@@ -34,6 +34,15 @@ Printer objects are placed in the world (small/medium/large) and can be:
 
 The printer consumes paper and toner from the player's inventory; both are refilled via `ox_target` interaction on the printer.
 
+## Using your own item names
+
+Printer/toner/document item names can be renamed to match your own inventory setup. Two files stay open (escrow-ignored) for this:
+
+- `config.lua` — the primary item-name table
+- `shared/enums.lua` — `PrinterItemMap` / `DocItemMap`, read directly by the placement and print logic
+
+Rename items in both files consistently, or printer/document Use won't recognize your custom item names.
+
 ## Symptom when the printer isn't running
 
 Notify: *nevera_printeri must be started to view documents.* → `ensure nevera_printeri`, then restart.
