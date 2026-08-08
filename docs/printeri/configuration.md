@@ -5,7 +5,7 @@ Primary editable file: `nevera_printeri/config.lua` (escrow-open, safe to edit).
 ## Locale
 
 ```lua
-Config.Locale = 'en'   -- 'en' or 'hr'
+Config.Locale = 'en'   -- 'en', 'hr', 'de', or 'es'
 ```
 
 `nevera_printeri` has its own, smaller locale set (`locales/en.lua`, `hr.lua`, `de.lua`, `es.lua`) — independent of Nevera Court's `Config.Locale`.
@@ -83,11 +83,13 @@ Config.PlacementRotStep = 5.0   -- degrees per scroll-wheel tick while rotating
 
 ```lua
 Config.Formats = {
-    business_card = { width = 400,  height = 250,  position = 'top-right' },
-    medium        = { width = 600,  height = 450,  position = 'center'    },
-    a4            = { width = 794,  height = 1123, position = 'center'    },
+    business_card = { width = 400,  height = 250  },
+    medium        = { width = 600,  height = 450  },
+    a4            = { width = 794,  height = 1123 },
 }
 ```
+
+These `width`/`height` values are sent straight to the NUI document viewer and control the actual window size on screen (capped to fit the player's screen). If you don't recognize a format key, the viewer falls back to its own built-in defaults.
 
 ## Required items
 

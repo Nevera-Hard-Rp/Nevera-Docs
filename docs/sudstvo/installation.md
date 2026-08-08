@@ -64,7 +64,7 @@ ensure ox_target
 ensure ox_inventory
 ensure [your-framework]   # es_extended / qb-core / qbx_core
 
-ensure nevera_printeri    # optional, sold separately — before Court if installed
+ensure nevera_printeri    # optional, sold separately — order doesn't matter, runtime check
 ensure Nevera_Court       # exact folder name
 ```
 

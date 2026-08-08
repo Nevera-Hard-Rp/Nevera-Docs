@@ -12,7 +12,7 @@ Import `nevera_printeri/sql/nevera_printeri.sql` — creates the two tables the 
 
 ## 3. Register the inventory items
 
-`nevera_printeri` needs 11 items registered in `ox_inventory` — 3 printers, paper, 6 size/color-matched toner cartridges, and the `document_a4` item it prints to. See [Configuration](configuration.md#required-items) for the full list.
+`nevera_printeri` needs 13 items registered in `ox_inventory` — 3 printers, paper, 6 size/color-matched toner cartridges, and 3 printable document items (`document_business_card`, `document_medium`, `document_a4`). See [Configuration](configuration.md#required-items) for the full list.
 
 `nevera_printeri/install/` ships a ready-made `ox_items.lua` block using the exact item names the resource expects, plus matching `.png` icons in `install/img/` — paste the block into your `ox_inventory` items and copy the icons over. No need to write the item definitions yourself.
 
@@ -24,4 +24,4 @@ Import `nevera_printeri/sql/nevera_printeri.sql` — creates the two tables the 
 
 ## Symptom if the printer resource is missing
 
-Notify: *nevera_printeri must be started to view documents.* → `ensure nevera_printeri`, then restart.
+Notify: *nevera_printeri must be started to view documents.* (only shown if you also own **Nevera Court** — the message is triggered by Court's own document handler, not by `nevera_printeri`) → `ensure nevera_printeri`, then restart. No particular `server.cfg` order is required.

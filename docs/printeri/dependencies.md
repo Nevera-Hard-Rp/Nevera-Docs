@@ -22,4 +22,4 @@ ensure qbx_core          # or es_extended / qb-core
 ensure nevera_printeri
 ```
 
-**Also running Nevera Court?** Start `nevera_printeri` **before** `Nevera_Court` — Court's document-viewing Use handler calls into it (see [Overview → Optional integration](overview.md#optional-nevera-court-integration)). Not required if you don't own Court.
+**Also running Nevera Court?** No particular order is required — the integration is a runtime check (`GetResourceState`) made when a player actually opens a document, not at resource boot, so it doesn't matter which one starts first as long as both are `ensure`d. Court's document handler opens documents through `nevera_printeri`'s viewer, and `nevera_printeri` can pull a Court-issued document's content from Court when both are running (see [Overview → Optional integration](overview.md#optional-nevera-court-integration)). Not required if you don't own Court.
