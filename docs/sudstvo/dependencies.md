@@ -8,7 +8,7 @@
 | `ox_lib` | **Yes** |
 | Framework (ESX / QB / Qbox / OX_Core) or `standalone` | **Yes** |
 | Inventory (**ox_inventory** recommended) | **Yes** (print / archive) |
-| **`nevera_printeri`** | **Yes** — inventory Use opens the filled form — see [Printers](/docs/printeri/overview.md). Self-contained, no separate bridge needed |
+| [`nevera_printeri`](/docs/printeri/overview.md) | **Optional, sold separately** — inventory Use opens the filled form; without it a printed document stays in the inventory but can't be viewed. Self-contained, no separate bridge needed |
 | MDT (ps-mdt / tk_mdt / ox_mdt / Advanced) | Optional |
 | `ox_target` | Recommended (courthouse zones; F5 panel key works without it) |
 | Phone / prison / `peleg-billing` | Optional |

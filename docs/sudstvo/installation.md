@@ -6,7 +6,7 @@ Use the buyer pack under `Install/` (SQL, items, companion printer, Discord conv
 
 ```text
 resources/[nevera]/Nevera_Court/          ← this resource
-resources/[nevera]/nevera_printeri/       ← copy from Install/companion/nevera_printeri
+resources/[nevera]/nevera_printeri/       ← optional, sold separately — see Printers docs
 ```
 
 Use the **exact folder name** in `ensure`. Printer / NUI paths resolve with `GetCurrentResourceName()`.
@@ -64,11 +64,11 @@ ensure ox_target
 ensure ox_inventory
 ensure [your-framework]   # es_extended / qb-core / qbx_core
 
-ensure nevera_printeri    # from Install/companion/ — before Court
+ensure nevera_printeri    # optional, sold separately — before Court if installed
 ensure Nevera_Court       # exact folder name
 ```
 
-Also run `nevera_printeri/sql/nevera_printeri.sql` once.
+If you own `nevera_printeri`, also run its `sql/nevera_printeri.sql` once.
 
 ## 5. First-boot checklist
 
@@ -76,7 +76,7 @@ Also run `nevera_printeri/sql/nevera_printeri.sql` once.
 - [ ] `Config.Locale` + `Config.Framework = 'auto'` (or `'esx'` / `'qb'` / `'qbox'`)
 - [ ] Supreme Court in `doj_roles` (ESX: id = `users.identifier`)
 - [ ] `document_a4` with `consume = 0` + correct `export`
-- [ ] `nevera_printeri` copied and started
+- [ ] `nevera_printeri` installed and started (optional, needed to view printed documents)
 - [ ] Print → inventory → **Use** → filled document
 - [ ] Courthouse coords / archive passwords / webhooks configured for your map
 

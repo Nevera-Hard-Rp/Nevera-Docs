@@ -32,6 +32,6 @@ See [Dependencies](dependencies.md) for the full requirements list.
 | [Discord & Webhooks](discord-webhooks.md) | System logs vs. printed-form transcripts |
 | [Exports & Integration](exports.md) | Calling Nevera Court from other resources / MDT |
 | [Staff & Player Guide](court-flow.md) | How to actually use the panel in-game |
-| [Printers](/docs/printeri/overview.md) | The `nevera_printeri` companion system — now its own docs section |
+| [Printers](/docs/printeri/overview.md) | `nevera_printeri` — optional, sold separately; renders printed documents when Used |
 | [Troubleshooting](troubleshooting.md) | Common problems and fixes |
 | [Changelog](changelog.md) | Version history |
