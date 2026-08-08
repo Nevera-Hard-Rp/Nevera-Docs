@@ -1,6 +1,6 @@
 # Printers — Configuration
 
-Primary editable file: `Install/companion/nevera_printeri/config.lua` (escrow-open, safe to edit).
+Primary editable file: `nevera_printeri/config.lua` (escrow-open, safe to edit).
 
 ## Locale
 

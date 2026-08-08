@@ -2,11 +2,8 @@
 
 ## 1. Place the resource
 
-Ships inside the purchased Nevera Court pack, in `Install/companion/`:
-
 ```
-Install/companion/nevera_printeri  →  resources/[nevera]/nevera_printeri
-Nevera_Court (main resource)       →  resources/[nevera]/Nevera_Court
+resources/[nevera]/nevera_printeri/
 ```
 
 ## 2. SQL (run once)
@@ -22,11 +19,11 @@ Import `nevera_printeri/sql/nevera_printeri.sql` — creates the two tables the 
 
 ## 3. Register the inventory items
 
-`nevera_printeri` needs 10 items registered in `ox_inventory` — 3 printers, paper, and 6 size/color-matched toner cartridges. See [Configuration](configuration.md#required-items) for the full list.
+`nevera_printeri` needs 11 items registered in `ox_inventory` — 3 printers, paper, 6 size/color-matched toner cartridges, and the `document_a4` item it prints to. See [Configuration](configuration.md#required-items) for the full list.
 
-`Install/companion/nevera_printeri/install/` ships a ready-made `ox_items.lua` block using the exact item names the resource expects, plus matching `.png` icons in `install/img/` — paste the block into your `ox_inventory` items and copy the icons over. No need to write the item definitions yourself.
+`nevera_printeri/install/` ships a ready-made `ox_items.lua` block using the exact item names the resource expects, plus matching `.png` icons in `install/img/` — paste the block into your `ox_inventory` items and copy the icons over. No need to write the item definitions yourself.
 
-**`document_a4` is owned by Nevera Court, not `nevera_printeri`** — register it from `Install/items/ox_inventory_document_a4.lua` (or `qbx_core_document_a4.lua` for Qbox — same block, since Qbox has no `qbx_core/shared/items.lua`). Do **not** paste a second `document_a4` from the printer's item file.
+**Already own Nevera Court too?** Its own `document_a4` item takes priority for Court's official documents — replace the `document_a4` entry from `nevera_printeri/install/ox_items.lua` with Court's version from `Install/items/ox_inventory_document_a4.lua` instead (or `qbx_core_document_a4.lua` for Qbox). Only one `document_a4` definition can exist in `items.lua` at a time — a second one silently overrides the first and breaks Use on whichever one lost.
 
 ## 4. Configure printer locations
 
