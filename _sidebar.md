@@ -12,9 +12,16 @@
   - [Discord & Webhooks](/docs/sudstvo/discord-webhooks.md)
   - [Exports & Integration](/docs/sudstvo/exports.md)
   - [Staff & Player Guide](/docs/sudstvo/court-flow.md)
-  - [Printers](/docs/sudstvo/printeri.md)
   - [Troubleshooting](/docs/sudstvo/troubleshooting.md)
   - [Changelog](/docs/sudstvo/changelog.md)
+
+- **Printers (nevera_printeri)**
+  - [Overview](/docs/printeri/overview.md)
+  - [Dependencies](/docs/printeri/dependencies.md)
+  - [Installation](/docs/printeri/installation.md)
+  - [Configuration](/docs/printeri/configuration.md)
+  - [Troubleshooting](/docs/printeri/troubleshooting.md)
+  - [Changelog](/docs/printeri/changelog.md)
 
 - **Weather (Realtime Weather & Clock)**
   - [Overview](/docs/weather/overview.md)
