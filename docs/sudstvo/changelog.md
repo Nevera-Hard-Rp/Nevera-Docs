@@ -12,6 +12,7 @@
 
 **Fixed**
 - Requests panel (Judge / Supreme Court / Clerk) no longer falls back to Croatian field labels and status text on non-Croatian installs — field labels, Yes/No values, and the decision-reason/fee text are now fully localized in all 5 languages
+- `doj_forms` was missing 4 columns (`arhiviran`, `arhivirao_citizenid`, `arhivirao_ime`, `datum_arhiviranja`) that `server/sv_archive.lua` writes on every archive/unarchive of a document — every move of `document_a4` into or out of the archive stash threw a SQL error, so the archive audit trail never actually recorded anything. Existing installs need an `ALTER TABLE` — see [Troubleshooting](troubleshooting.md).
 
 **Changed**
 - Printed-document storage moved to a slim `doc_id` reference resolved against the database, instead of baking the full HTML into inventory item metadata (fixes large documents failing to sync via `ox_inventory`)

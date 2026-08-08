@@ -11,6 +11,7 @@
 | Use deletes item / nothing opens | `consume = 0` + start **`nevera_printeri`** |
 | Save / Print error | Add `document_a4` + PNG; check the `[sv_printer]` console log |
 | Archive won't open | Wrong role, or wrong `Config.Archive.Passwords` entry |
+| Console shows `Unknown column 'arhiviran'` (or `arhivirao_citizenid` / `arhivirao_ime` / `datum_arhiviranja`) when moving a document into/out of the archive stash | Database predates the archive-column fix | `ALTER TABLE doj_forms ADD COLUMN arhiviran TINYINT(1) NOT NULL DEFAULT 0, ADD COLUMN arhivirao_citizenid VARCHAR(100) DEFAULT NULL, ADD COLUMN arhivirao_ime VARCHAR(100) DEFAULT NULL, ADD COLUMN datum_arhiviranja DATETIME NULL DEFAULT NULL;` — a fresh `01_nevera_court.sql` import already includes these |
 | Discord screenshots fail | Missing `nevera_court_imgbb_key` or `nevera_court_wh_*` convars — see [Discord & Webhooks](discord-webhooks.md) |
 
 ## When opening a support ticket, include
