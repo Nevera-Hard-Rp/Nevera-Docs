@@ -11,7 +11,7 @@ A full **Department of Justice (DOJ)** system for serious legal roleplay on Five
 
 ## Supported frameworks
 
-ESX · QBCore · Qbox · Standalone (`Config.Framework = 'auto'`)
+ESX · QBCore · Qbox · OX_Core · Standalone (`Config.Framework = 'auto'`)
 
 ## Languages
 
